@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace NStore.Identidade.API.Models
 {
     public class UsuarioRegistro
     {
-        [Required(ErrorMessage= "O campo {0} e obrigatorio")]
+        [Required(ErrorMessage = "O campo {0} e obrigatorio")]
         [EmailAddress(ErrorMessage = "O campo {0} esta em formato invalido")]
         public string Email { get; set; }
 
@@ -16,7 +12,7 @@ namespace NStore.Identidade.API.Models
         [StringLength(100, ErrorMessage = "O campo precisa ter entre {2} e {1} caracteres", MinimumLength = 6)]
         public string Senha { get; set; }
 
-        [Compare("Senha", ErrorMessage ="As senhas nao conferem")]
+        [Compare("Senha", ErrorMessage = "As senhas nao conferem")]
         public string SenhaConfirmacao { get; set; }
     }
 

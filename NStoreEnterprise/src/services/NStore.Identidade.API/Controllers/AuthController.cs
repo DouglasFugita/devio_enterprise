@@ -47,7 +47,7 @@ namespace NStore.Identidade.API.Controllers
                 return CustomResponse(await GerarJwt(usuarioRegistro.Email));
             }
 
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 AdicionarErroProcessamento(error.Description);
             }
@@ -149,7 +149,7 @@ namespace NStore.Identidade.API.Controllers
             return (long)Math.Round((date.ToUniversalTime() - dto).TotalSeconds);
 
         }
-            
+
 
     }
 }

@@ -1,18 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NStore.Catalogo.API.Data.Mappings;
 using NStore.Catalogo.API.Models;
-using System;
-using System.Collections.Generic;
+using NStore.Core.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace NStore.Catalogo.API.Data
 {
-    public class CatalogoContext : DbContext
+    public class CatalogoContext : DbContext, IUnitOfWork
     {
-        public CatalogoContext(DbContextOptions<CatalogoContext> options) : base(options){ }
+        public CatalogoContext(DbContextOptions<CatalogoContext> options) : base(options) { }
 
-        public DbSet<Produto> Produtos { get; set; } 
+        public DbSet<Produto> Produtos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,6 +19,11 @@ namespace NStore.Catalogo.API.Data
                 property.SetColumnType("varchar(50)");
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);
+        }
+
+        public async Task<bool> Commit()
+        {
+            return await base.SaveChangesAsync() > 0;
         }
     }
 }

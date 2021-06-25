@@ -12,6 +12,7 @@
     <None Remove="Views\Catalogo\Index.html" />
     <None Remove="Views\Catalogo\ProdutoDetalhe.html" />
     <None Remove="Views\Home\Index.html" />
+    <None Remove="Views\Home\Privacy.html" />
     <None Remove="Views\Shared\_LoginPartial.html" />
   </ItemGroup>
 
@@ -19,6 +20,7 @@
     <Content Include="Views\Catalogo\Index.html" />
     <Content Include="Views\Catalogo\ProdutoDetalhe.html" />
     <Content Include="Views\Home\Index.html" />
+    <Content Include="Views\Home\Privacy.html" />
     <Content Include="Views\Shared\_LoginPartial.html" />
   </ItemGroup>
 

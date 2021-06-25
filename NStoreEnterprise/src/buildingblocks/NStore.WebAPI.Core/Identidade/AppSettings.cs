@@ -1,4 +1,4 @@
-﻿namespace NStore.Identidade.API.Extensions
+﻿namespace NStore.WebAPI.Core.Identidade
 {
     public class AppSettings
     {

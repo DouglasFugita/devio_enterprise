@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NStore.Core.DomainObjects
 {
@@ -14,24 +10,24 @@ namespace NStore.Core.DomainObjects
         {
             var compareTo = obj as Entity;
 
-            if(ReferenceEquals(null, compareTo)) return false;
-            if(ReferenceEquals(this, compareTo)) return true;
+            if (ReferenceEquals(null, compareTo)) return false;
+            if (ReferenceEquals(this, compareTo)) return true;
 
             return Id.Equals(compareTo.Id);
         }
 
-        public static bool operator == (Entity a, Entity b)
+        public static bool operator ==(Entity a, Entity b)
         {
-            if(ReferenceEquals(null, a) && ReferenceEquals(b,null))
+            if (ReferenceEquals(null, a) && ReferenceEquals(b, null))
                 return true;
-            
-            if(ReferenceEquals(null, a) || ReferenceEquals(null, b))
+
+            if (ReferenceEquals(null, a) || ReferenceEquals(null, b))
                 return false;
-        
+
             return a.Equals(b);
         }
 
-        public static bool operator != (Entity a, Entity b)
+        public static bool operator !=(Entity a, Entity b)
         {
             return !(a == b);
         }

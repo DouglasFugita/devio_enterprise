@@ -1,10 +1,10 @@
-﻿using NStore.Core.DomainObjects;
-using System;
+﻿using System;
 
-namespace NStore.Catalogo.API.Models
+namespace NSE.WebApp.MVC.Models
 {
-    public class Produto : Entity, IAggregateRoot
+    public class ProdutoViewModel
     {
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
