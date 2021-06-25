@@ -6,9 +6,22 @@ Projeto baseado no conteudo abordado no curso ASP.NET Core Enterprise Applicatio
 Foi utilizado o docker-compose para subir uma instancia SQL Server
 Arquivos salvos em: \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
 
-## Assuntos abordados neste exemplo
+## Assuntos abordados neste projeto
+Geral
+- EntityFrameworkCore
+- 
 Servico de Identidade
 - Asp.net Identity
 - JWT
-- 
+- Catalogo
 
+
+
+## Questoes levantas
+- Utilizacao de um unico BD para todos os servicos
+- Modelo em camadas em APIs simples (Catalogo)
+- Acoplamento por conta do DomainObjects no Core
+
+## Melhorias futuras
+- Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
+- API pra controle de estoque
