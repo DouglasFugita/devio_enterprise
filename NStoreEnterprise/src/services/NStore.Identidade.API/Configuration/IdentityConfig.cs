@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NStore.Identidade.API.Data;
 using NStore.Identidade.API.Extensions;
+using NStore.WebAPI.Core.Identidade;
 using System.Text;
 
 namespace NStore.Identidade.API.Configuration
@@ -24,17 +25,10 @@ namespace NStore.Identidade.API.Configuration
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-
+            services.AddJwtConfig(configuration);
 
             return services;
         }
 
-        public static IApplicationBuilder UserIdentityConfiguration(this IApplicationBuilder app)
-        {
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            return app;
-        }
     }
 }

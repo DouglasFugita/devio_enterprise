@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NStore.Catalogo.API.Configuration;
+using NStore.WebAPI.Core.Identidade;
 
 namespace NStore.Catalogo.API
 {
@@ -30,6 +31,8 @@ namespace NStore.Catalogo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApiConfig(Configuration);
+            services.AddJwtConfig(Configuration);
+
             services.AddSwaggerConfig();
 
             services.RegisterServices();

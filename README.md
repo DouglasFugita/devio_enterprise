@@ -9,11 +9,13 @@ Arquivos salvos em: \\wsl$\docker-desktop-data\version-pack-data\community\docke
 ## Assuntos abordados neste projeto
 Geral
 - EntityFrameworkCore
+- Swagger
 - 
 Servico de Identidade
 - Asp.net Identity
 - JWT
-- Catalogo
+
+
 
 
 
@@ -21,7 +23,8 @@ Servico de Identidade
 - Utilizacao de um unico BD para todos os servicos
 - Modelo em camadas em APIs simples (Catalogo)
 - Acoplamento por conta do DomainObjects no Core
+- Secret do Identity exposto
 
 ## Melhorias futuras
-- Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
-- API pra controle de estoque
+- [ ] Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
+- [ ] API pra controle de estoque

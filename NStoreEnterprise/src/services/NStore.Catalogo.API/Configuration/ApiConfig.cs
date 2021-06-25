@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NStore.Catalogo.API.Data;
+using NStore.WebAPI.Core.Identidade;
 
 namespace NStore.Catalogo.API.Configuration
 {
@@ -43,7 +44,7 @@ namespace NStore.Catalogo.API.Configuration
 
             app.UseCors("Total");
 
-            app.UseAuthorization();
+            app.UseAuthConfig();
 
             app.UseEndpoints(endpoints =>
             {
