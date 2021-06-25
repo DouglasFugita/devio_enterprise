@@ -12,7 +12,6 @@ services:
           - sqldata:/var/opt/sqlserver/data
           - sqllog:/var/opt/sqlserver/log
           - sqlbackup:/var/opt/sqlserver/backup
-
 volumes:
   sqlsystem:
   sqldata:
