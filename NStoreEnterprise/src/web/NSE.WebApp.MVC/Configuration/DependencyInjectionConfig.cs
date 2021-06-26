@@ -30,7 +30,7 @@ namespace NSE.WebApp.MVC.Configuration
             services.AddHttpClient<ICatalogoService, CatalogoService>()
             .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
             //.AddTransientHttpErrorPolicy(
-            //    p => p.WaitAndRetryAsync(3,_ => TimeSpan.FromMilliseconds(600)));
+            //    p => p.WaitAndRetryAsync(3,TimeSpan.FromMilliseconds(600)));
             .AddPolicyHandler(PollyExtensions.EsperarTentar())
             .AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(5,TimeSpan.FromSeconds(30)));
 
@@ -58,7 +58,7 @@ namespace NSE.WebApp.MVC.Configuration
                     Console.WriteLine($"Tentando pela {retryCount} vez!");
                     Console.ForegroundColor = ConsoleColor.White;
                 });
-            return retry
+            return retry;
         }
     }
 }
