@@ -13,6 +13,7 @@ Dados
 API
 - Swagger
 - Refit
+- Polly
 
 Servico de Identidade
 - Asp.net Identity
