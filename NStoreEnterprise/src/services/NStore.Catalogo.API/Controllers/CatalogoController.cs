@@ -30,6 +30,9 @@ namespace NStore.Catalogo.API.Controllers
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> ProdutoDetalhe(Guid id)
         {
+            //Validacao Polly
+            //throw new Exception("Erro!");
+
             return await _produtoRepository.ObterPorId(id);
         }
     }
