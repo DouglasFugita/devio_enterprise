@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace NSE.WebApp.MVC
+namespace NStore.WebApp.MVC
 {
     public class Program
     {

@@ -1,10 +1,10 @@
-﻿using NSE.WebApp.MVC.Extensions;
+﻿using NStore.WebApp.MVC.Extensions;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Services
+namespace NStore.WebApp.MVC.Services
 {
     public abstract class Service
     {

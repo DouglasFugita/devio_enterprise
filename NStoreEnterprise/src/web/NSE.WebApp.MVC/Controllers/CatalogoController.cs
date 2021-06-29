@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NSE.WebApp.MVC.Services;
+using NStore.WebApp.MVC.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Controllers
+namespace NStore.WebApp.MVC.Controllers
 {
     public class CatalogoController : Controller
     {

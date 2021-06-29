@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NSE.WebApp.MVC.Extensions;
-using NSE.WebApp.MVC.Services;
-using NSE.WebApp.MVC.Services.Handlers;
+using NStore.WebApp.MVC.Extensions;
+using NStore.WebApp.MVC.Services;
+using NStore.WebApp.MVC.Services.Handlers;
 using Polly;
 using Polly.Extensions.Http;
 using Polly.Retry;
 using System;
 using System.Net.Http;
 
-namespace NSE.WebApp.MVC.Configuration
+namespace NStore.WebApp.MVC.Configuration
 {
     public static class DependencyInjectionConfig
     {

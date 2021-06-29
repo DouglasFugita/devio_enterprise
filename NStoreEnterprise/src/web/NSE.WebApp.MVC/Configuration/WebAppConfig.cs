@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NSE.WebApp.MVC.Extensions;
+using NStore.WebApp.MVC.Extensions;
 using System.Globalization;
 
-namespace NSE.WebApp.MVC.Configuration
+namespace NStore.WebApp.MVC.Configuration
 {
     public static class WebAppConfig
     {

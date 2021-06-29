@@ -14,7 +14,7 @@ namespace NStore.Clientes.API.Configuration
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NStore.Cliente.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NStore.Clientes.API", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -45,7 +45,7 @@ namespace NStore.Clientes.API.Configuration
         public static void UseSwaggerConfig(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NStore.Cliente.API v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NStore.Clientes.API v1"));
         }
     }
 }

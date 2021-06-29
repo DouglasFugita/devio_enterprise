@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace NSE.WebApp.MVC.Models
+namespace NStore.WebApp.MVC.Models
 {
     public class UsuarioRegistro
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace NSE.WebApp.MVC.Configuration
+namespace NStore.WebApp.MVC.Configuration
 {
     public static class IdentityConfig
     {

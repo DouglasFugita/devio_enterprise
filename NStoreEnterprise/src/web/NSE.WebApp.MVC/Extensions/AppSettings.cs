@@ -1,4 +1,4 @@
-﻿namespace NSE.WebApp.MVC.Extensions
+﻿namespace NStore.WebApp.MVC.Extensions
 {
     public class AppSettings
     {

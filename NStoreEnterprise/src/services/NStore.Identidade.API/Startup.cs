@@ -43,7 +43,6 @@ namespace NStore.Identidade.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             app.UseSwaggerConfiguration(env);
             app.UseApiConfiguration(env);
         }

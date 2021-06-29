@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NSE.WebApp.MVC.Models;
+using NStore.WebApp.MVC.Models;
 
-namespace NSE.WebApp.MVC.Controllers
+namespace NStore.WebApp.MVC.Controllers
 {
     public class HomeController : MainController
     {

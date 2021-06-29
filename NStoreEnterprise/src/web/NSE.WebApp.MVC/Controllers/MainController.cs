@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NSE.WebApp.MVC.Models;
+using NStore.WebApp.MVC.Models;
 using System.Linq;
 
-namespace NSE.WebApp.MVC.Controllers
+namespace NStore.WebApp.MVC.Controllers
 {
     public class MainController : Controller
     {

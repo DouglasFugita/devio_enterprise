@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using NSE.WebApp.MVC.Models;
-using NSE.WebApp.MVC.Services;
+using NStore.WebApp.MVC.Models;
+using NStore.WebApp.MVC.Services;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Controllers
+namespace NStore.WebApp.MVC.Controllers
 {
     public class IdentidadeController : MainController
     {

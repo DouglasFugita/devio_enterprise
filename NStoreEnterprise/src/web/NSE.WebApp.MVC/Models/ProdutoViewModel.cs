@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NSE.WebApp.MVC.Models
+namespace NStore.WebApp.MVC.Models
 {
     public class ProdutoViewModel
     {

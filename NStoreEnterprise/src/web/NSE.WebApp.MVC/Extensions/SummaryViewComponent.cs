@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace NStore.WebApp.MVC.Extensions
 {
     public class SummaryViewComponent : ViewComponent
     {

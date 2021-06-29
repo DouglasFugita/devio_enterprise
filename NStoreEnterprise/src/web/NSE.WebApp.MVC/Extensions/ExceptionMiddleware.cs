@@ -3,7 +3,7 @@ using Refit;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace NStore.WebApp.MVC.Extensions
 {
     public class ExceptionMiddleware
     {

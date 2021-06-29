@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NStore.Catalogo.API.Models;
+using NStore.WebAPI.Core.Controllers;
 using NStore.WebAPI.Core.Identidade;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace NStore.Catalogo.API.Controllers
 {
-    [ApiController]
     [Authorize]
-    public class CatalogoController : Controller
+    public class CatalogoController : MainController
     {
         public readonly IProdutoRepository _produtoRepository;
 

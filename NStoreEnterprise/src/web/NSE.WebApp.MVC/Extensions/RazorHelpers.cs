@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace NStore.WebApp.MVC.Extensions
 {
     public static class RazorHelpers
     {

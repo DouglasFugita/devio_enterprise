@@ -1,4 +1,4 @@
-﻿using NSE.WebApp.MVC.Extensions;
+﻿using NStore.WebApp.MVC.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NSE.WebApp.MVC.Services.Handlers
+namespace NStore.WebApp.MVC.Services.Handlers
 {
     public class HttpClientAuthorizationDelegatingHandler : DelegatingHandler
     {
