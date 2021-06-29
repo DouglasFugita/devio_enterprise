@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.Catalogo.API", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{E00060F0-65D6-4CCF-B59F-C2A4C180D0CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.Cliente.API", "src\services\NStore.Cliente.API\NStore.Cliente.API.csproj", "{822013C4-4E02-4FC8-98BF-46B828FF70B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.Clientes.API", "src\services\NStore.Cliente.API\NStore.Clientes.API.csproj", "{822013C4-4E02-4FC8-98BF-46B828FF70B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pagamento", "Pagamento", "{2C5A4CE5-EB52-4189-832F-32E6220BAF20}"
 EndProject
@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.Pedido.API", "src\se
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D7ED787C-C0E6-46B6-AA94-5A084ADE613A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NStore.WebAPI.Core", "src\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj", "{D94603C9-B21C-4332-892E-9065C53338E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.WebAPI.Core", "src\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj", "{D94603C9-B21C-4332-892E-9065C53338E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

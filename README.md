@@ -1,4 +1,4 @@
-## Enterprise Core
+# Enterprise Core
 
 Projeto baseado no conteudo abordado no curso ASP.NET Core Enterprise Applications, que pode ser encontrado em: https://desenvolvedor.io/curso-online-asp-net-core-enterprise-applications
 
@@ -7,8 +7,13 @@ Foi utilizado o docker-compose para subir uma instancia SQL Server
 Arquivos salvos em: \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
 
 ## Assuntos abordados neste projeto
+Conceitos
+- DDD
+- CQRS
+
 Dados
 - EntityFrameworkCore
+- Dapper
 
 API
 - Swagger
@@ -19,8 +24,14 @@ Servico de Identidade
 - Asp.net Identity
 - JWT
 
+CQRS
+- Mediatr
 
+Mensageria
+- RabbitMQ
 
+Validacao
+- FluentValidation
 
 
 
@@ -33,3 +44,4 @@ Servico de Identidade
 ## Melhorias futuras
 - [ ] Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
 - [ ] API pra controle de estoque
+- [ ] Controle de identidade com KeyCloak
