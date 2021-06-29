@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using MediatR;
+using NStore.Clientes.API.Application.Events;
 using NStore.Clientes.API.Models;
 using NStore.Core.Messages;
 using System.Threading;
@@ -30,6 +31,8 @@ namespace NStore.Clientes.API.Application.Commands
             }
 
             _clienteRepository.Adicionar(cliente);
+
+            cliente.AdicionarEvento(new ClienteRegistradoEvent(message.Id, message.Nome, message.Email, message.Cpf));
 
             return await PersistirDados(_clienteRepository.UnitOfWork);
         }

@@ -10,7 +10,7 @@ namespace NStore.Core.Mediator
 {
     public interface IMediatorHandler
     {
-        Task PublicarEvent<T>(T evento) where T : Event;
+        Task PublicarEvento<T>(T evento) where T : Event;
         Task<ValidationResult> EnviarComando<T>(T comando) where T : Command;
     }
 }

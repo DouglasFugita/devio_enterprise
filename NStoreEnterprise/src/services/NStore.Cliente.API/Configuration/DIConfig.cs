@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using NStore.Clientes.API.Application.Commands;
+using NStore.Clientes.API.Application.Events;
 using NStore.Clientes.API.Data;
 using NStore.Clientes.API.Data.Repository;
 using NStore.Clientes.API.Models;
@@ -19,6 +20,8 @@ namespace NStore.Clientes.API.Configuration
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IRequestHandler<RegistrarClienteCommand, ValidationResult>, ClienteCommandHandler>();
+
+            services.AddScoped<INotificationHandler<ClienteRegistradoEvent>, ClienteEventHandler>();
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<ClientesContext>();
