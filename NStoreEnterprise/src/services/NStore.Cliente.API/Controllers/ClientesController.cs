@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Controllers
 {
-    [Authorize]
     public class ClientesController : MainController
     {
         private readonly IMediatorHandler _mediatorHandler;

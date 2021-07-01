@@ -19,6 +19,7 @@ namespace NStore.Core.DomainObjects
         public Email (string endereco)
         {
             if (!Validar(endereco)) throw new DomainException("E-mail invalido");
+            Endereco = endereco;
         }
 
         public static bool Validar(string email)

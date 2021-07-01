@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NStore.WebApp.MVC.Extensions;
@@ -9,6 +10,7 @@ using Polly.Extensions.Http;
 using Polly.Retry;
 using System;
 using System.Net.Http;
+using static NStore.WebApp.MVC.Extensions.CpfAttribute;
 
 namespace NStore.WebApp.MVC.Configuration
 {
@@ -16,6 +18,8 @@ namespace NStore.WebApp.MVC.Configuration
     {
         public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+
             services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
             services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
@@ -28,11 +32,13 @@ namespace NStore.WebApp.MVC.Configuration
             //    .AddTypedClient(Refit.RestService.For<ICatalogoServiceRefit>);
 
             services.AddHttpClient<ICatalogoService, CatalogoService>()
-            .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
-            //.AddTransientHttpErrorPolicy(
-            //    p => p.WaitAndRetryAsync(3,TimeSpan.FromMilliseconds(600)));
-            .AddPolicyHandler(PollyExtensions.EsperarTentar())
-            .AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(5,TimeSpan.FromSeconds(30)));
+                .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
+                //.AddTransientHttpErrorPolicy(
+                //    p => p.WaitAndRetryAsync(3,TimeSpan.FromMilliseconds(600)));
+                .AddPolicyHandler(PollyExtensions.EsperarTentar())
+                .AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(5,TimeSpan.FromSeconds(30)));
+
+
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUser, AspNetUser>();

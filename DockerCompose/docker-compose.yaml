@@ -12,8 +12,24 @@ services:
           - sqldata:/var/opt/sqlserver/data
           - sqllog:/var/opt/sqlserver/log
           - sqlbackup:/var/opt/sqlserver/backup
+    rabbitmq:
+      container_name: RabbitMQ
+      hostname: rabbitmq
+      build: 
+        context: ./rabbitmq
+      volumes:
+        - rabbitmq_data:/var/lib/rabbitmq/mnesia
+      ports:
+        - "15672:15672" #management
+        - "5672:5672"   #amqp
+      environment:
+        RABBITMQ_DEFAULT_USER: logUser
+        RABBITMQ_DEFAULT_PASS: logPwd
+        RABBITMQ_DEFAULT_VHOST: EnterpriseLog       
+
 volumes:
   sqlsystem:
   sqldata:
   sqllog:
   sqlbackup:
+  rabbitmq_data:

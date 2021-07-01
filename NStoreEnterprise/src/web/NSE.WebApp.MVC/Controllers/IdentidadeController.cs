@@ -39,7 +39,7 @@ namespace NStore.WebApp.MVC.Controllers
 
             await RealizarLogin(resposta);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Catalogo");
         }
 
         [HttpGet]
