@@ -6,6 +6,11 @@ Projeto baseado no conteudo abordado no curso ASP.NET Core Enterprise Applicatio
 Foi utilizado o docker-compose para subir uma instancia SQL Server
 Arquivos salvos em: \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
 
+## RabbitMQ - Docker
+A utilizacao do docker-compose tambem habilita o RabbitMQ em suas portas standard:
+- 5672 (AMQP listener)
+- 15672 (Management UI)
+
 ## Assuntos abordados neste projeto
 Conceitos
 - DDD
@@ -37,11 +42,13 @@ Validacao
 
 ## Questoes levantas
 - Utilizacao de um unico BD para todos os servicos
-- Modelo em camadas em APIs simples (Catalogo)
+- Modelo em camadas divididos em pastas logicas por serem APIs simples
 - Acoplamento por conta do DomainObjects no Core
 - Secret do Identity exposto no appsettings
+- Utilizacao de IServiceProvider.CreateScope para utilizacao de classe injetada por dependencia Scoped em BackgroundService Singleton (Service Locator)
 
 ## Melhorias futuras
 - [ ] Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
 - [ ] API pra controle de estoque
 - [ ] Controle de identidade com KeyCloak
+- [ ] Utilizar AMQP Client Library ao inves de EasyNetQ

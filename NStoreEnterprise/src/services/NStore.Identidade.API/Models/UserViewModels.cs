@@ -5,6 +5,12 @@ namespace NStore.Identidade.API.Models
     public class UsuarioRegistro
     {
         [Required(ErrorMessage = "O campo {0} e obrigatorio")]
+        public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} e obrigatorio")]
+        public string Cpf { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} e obrigatorio")]
         [EmailAddress(ErrorMessage = "O campo {0} esta em formato invalido")]
         public string Email { get; set; }
 
