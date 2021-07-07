@@ -69,7 +69,7 @@ namespace NStore.Identidade.API.Controllers
 
             // Chamada por RPC com EasyNetQ
             // TODO: refazer com AMQP client library
-            _bus = RabbitHutch.CreateBus("host=localhost;virtualHost=EnterpriseLog;username=logUser;password=logPwd");
+            _bus = RabbitHutch.CreateBus("host=localhost;virtualHost=NStore;username=rabbitUser;password=rabbitPwd");
             var sucesso = await _bus.Rpc.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
 
             return sucesso;
