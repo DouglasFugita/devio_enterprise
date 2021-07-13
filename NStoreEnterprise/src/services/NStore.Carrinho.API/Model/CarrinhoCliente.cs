@@ -20,5 +20,37 @@ namespace NStore.Carrinho.API.Model
 
         public CarrinhoCliente() { }
 
+        internal void AdicionarItem(CarrinhoItem item)
+        {
+            if (!item.EhValido()) return;
+
+            item.AssociarCarriho(Id);
+            if (CarrinhoItemExistente(item))
+            {
+                var itemExistente = ObterItemPorProdutoId(item);
+                itemExistente.AdicionarUnidades(item.Quantidade);
+
+                item = itemExistente;
+                Itens.Remove(itemExistente);
+            }
+            Itens.Add(item);
+            CalcularValorCarrinho();
+        }
+
+        internal void CalcularValorCarrinho()
+        {
+            ValorTotal = Itens.Sum(p => p.CalcularValorTotalItem());
+        }
+
+        internal bool CarrinhoItemExistente(CarrinhoItem item)
+        {
+            return Itens.Any(p => p.ProdutoId == item.ProdutoId);
+        }
+
+        internal CarrinhoItem ObterItemPorProdutoId(CarrinhoItem item)
+        {
+            return Itens.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
+        }
+
     }
 }
