@@ -20,6 +20,9 @@ Dados
 - EntityFrameworkCore
 - Dapper
 
+Caching
+- Redis
+
 API
 - Swagger
 - Refit
@@ -49,7 +52,9 @@ Validacao
 - Utilizacao de IServiceProvider.CreateScope para utilizacao de classe injetada por dependencia Scoped em BackgroundService Singleton (Service Locator)
 
 ## Melhorias futuras
-- [ ] Implantacao de recursos outros recursos do Identity (2FA, Recuperacao de senha)
+- [ ] Implementar outros recursos do Identity (2FA, Recuperacao de senha)
 - [ ] API pra controle de estoque
 - [ ] Controle de identidade com KeyCloak
 - [ ] Utilizar AMQP Client Library ao inves de EasyNetQ
+- [ ] Implementar REDIS para API Carrinho
+- [ ] Implementar Ocelot como API Gateway

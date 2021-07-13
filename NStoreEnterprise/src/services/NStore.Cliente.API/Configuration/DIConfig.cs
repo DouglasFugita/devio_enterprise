@@ -19,13 +19,13 @@ namespace NStore.Clientes.API.Configuration
     {
         public static void RegisterServices(this IServiceCollection services)
         {
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<ClientesContext>();
+
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IRequestHandler<RegistrarClienteCommand, ValidationResult>, ClienteCommandHandler>();
 
             services.AddScoped<INotificationHandler<ClienteRegistradoEvent>, ClienteEventHandler>();
-
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<ClientesContext>();
         }
     }
 }

@@ -17,4 +17,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj" />
+    <ProjectReference Include="..\NStore.Cliente.API\NStore.Clientes.API.csproj" />
+  </ItemGroup>
+
 </Project>
