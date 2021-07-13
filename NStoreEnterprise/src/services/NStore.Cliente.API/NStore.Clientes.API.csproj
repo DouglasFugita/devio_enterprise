@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyNetQ" Version="6.3.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
@@ -25,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\buildingblocks\NStore.Core\NStore.Core.csproj" />
+    <ProjectReference Include="..\..\buildingblocks\NStore.MessageBus\NStore.MessageBus.csproj" />
     <ProjectReference Include="..\..\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj" />
   </ItemGroup>
 

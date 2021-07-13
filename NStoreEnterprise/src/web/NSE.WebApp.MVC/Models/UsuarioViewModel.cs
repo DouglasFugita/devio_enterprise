@@ -28,6 +28,7 @@ namespace NStore.WebApp.MVC.Models
         [DisplayName("Confirme sua senha")]
         [Compare("Senha", ErrorMessage = "As senhas não conferem.")]
         public string SenhaConfirmacao { get; set; }
+
     }
 
     public class UsuarioLogin
@@ -61,4 +62,5 @@ namespace NStore.WebApp.MVC.Models
         public string Value { get; set; }
         public string Type { get; set; }
     }
+
 }

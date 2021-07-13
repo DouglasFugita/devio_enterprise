@@ -45,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NStore.WebAPI.Core", "src\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj", "{D94603C9-B21C-4332-892E-9065C53338E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{61B71E11-45F4-48FE-970E-77591D7EF0D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NStore.MessageBus", "src\buildingblocks\NStore.MessageBus\NStore.MessageBus.csproj", "{CEF67437-1328-4592-A8A1-7027CEB973E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,10 @@ Global
 		{D94603C9-B21C-4332-892E-9065C53338E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D94603C9-B21C-4332-892E-9065C53338E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D94603C9-B21C-4332-892E-9065C53338E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF67437-1328-4592-A8A1-7027CEB973E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF67437-1328-4592-A8A1-7027CEB973E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF67437-1328-4592-A8A1-7027CEB973E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF67437-1328-4592-A8A1-7027CEB973E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +118,8 @@ Global
 		{A6C32EC3-F59B-4678-9259-DF124F848AC3} = {445AC786-2B4F-4B28-9AD3-859C61AD4622}
 		{D7ED787C-C0E6-46B6-AA94-5A084ADE613A} = {F0F0C6D7-CDBD-4950-B037-62373905B2F7}
 		{D94603C9-B21C-4332-892E-9065C53338E1} = {D7ED787C-C0E6-46B6-AA94-5A084ADE613A}
+		{61B71E11-45F4-48FE-970E-77591D7EF0D5} = {F0F0C6D7-CDBD-4950-B037-62373905B2F7}
+		{CEF67437-1328-4592-A8A1-7027CEB973E8} = {61B71E11-45F4-48FE-970E-77591D7EF0D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46675C44-FB07-4675-9D54-1451F8770748}

@@ -23,9 +23,9 @@ services:
         - "15672:15672" #management
         - "5672:5672"   #amqp
       environment:
-        RABBITMQ_DEFAULT_USER: logUser
-        RABBITMQ_DEFAULT_PASS: logPwd
-        RABBITMQ_DEFAULT_VHOST: EnterpriseLog       
+        RABBITMQ_DEFAULT_USER: rabbitUser
+        RABBITMQ_DEFAULT_PASS: rabbitPwd
+        RABBITMQ_DEFAULT_VHOST: NStore       
 
 volumes:
   sqlsystem:

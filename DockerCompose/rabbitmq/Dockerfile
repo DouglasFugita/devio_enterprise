@@ -8,4 +8,4 @@ ADD ./rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
 #rabbitmq_federation rabbitmq_federation_management \
 #rabbitmq_shovel rabbitmq_shovel_management 
 
-RUN apk add curl
+# RUN apk add curl

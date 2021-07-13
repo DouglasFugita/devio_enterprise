@@ -34,6 +34,7 @@ CQRS
 
 Mensageria
 - RabbitMQ
+- EasyNetQ
 
 Validacao
 - FluentValidation

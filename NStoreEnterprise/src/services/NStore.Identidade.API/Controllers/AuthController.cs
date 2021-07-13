@@ -1,11 +1,11 @@
-﻿using EasyNetQ;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using NStore.Core.Messages.Integration;
 using NStore.Identidade.API.Extensions;
 using NStore.Identidade.API.Models;
+using NStore.MessageBus;
 using NStore.WebAPI.Core.Controllers;
 using NStore.WebAPI.Core.Identidade;
 using System;
@@ -26,13 +26,14 @@ namespace NStore.Identidade.API.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
 
-        private IBus _bus;
+        private readonly IMessageBus _bus;
 
-        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings)
+        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOptions<AppSettings> appSettings, IMessageBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("nova-conta")]
@@ -50,7 +51,12 @@ namespace NStore.Identidade.API.Controllers
             var result = await _userManager.CreateAsync(user, usuarioRegistro.Senha);
             if (result.Succeeded)
             {
-                var integracaoSucesso = await RegistrarCliente(usuarioRegistro);
+                var integracaoResult = await RegistrarCliente(usuarioRegistro);
+                if (!integracaoResult.ValidationResult.IsValid)
+                {
+                    await _userManager.DeleteAsync(user);
+                    return CustomResponse(integracaoResult.ValidationResult);
+                }
 
                 return CustomResponse(await GerarJwt(usuarioRegistro.Email));
             }
@@ -65,14 +71,17 @@ namespace NStore.Identidade.API.Controllers
         private async Task<ResponseMessage> RegistrarCliente(UsuarioRegistro usuarioRegistro)
         {
             var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
-            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Senha);
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
 
-            // Chamada por RPC com EasyNetQ
-            // TODO: refazer com AMQP client library
-            _bus = RabbitHutch.CreateBus("host=localhost;virtualHost=NStore;username=rabbitUser;password=rabbitPwd");
-            var sucesso = await _bus.Rpc.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
-
-            return sucesso;
+            try
+            {
+                return await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+            }
+            catch
+            {
+                await _userManager.DeleteAsync(usuario);
+                throw;
+            }
 
         }
 

@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyNetQ" Version="6.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -27,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\buildingblocks\NStore.Core\NStore.Core.csproj" />
+    <ProjectReference Include="..\..\buildingblocks\NStore.MessageBus\NStore.MessageBus.csproj" />
     <ProjectReference Include="..\..\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj" />
   </ItemGroup>
 

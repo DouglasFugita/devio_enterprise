@@ -35,10 +35,11 @@ namespace NStore.Identidade.API
         {
             services.AddIdentityConfiguration(Configuration);
 
-
             services.AddApiConfiguration();
 
             services.AddSwaggerConfiguration();
+
+            services.AddMessageBusConfig(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
