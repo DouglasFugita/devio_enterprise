@@ -8,7 +8,10 @@ namespace NStore.WebApp.MVC.Controllers
     {
         protected bool ResponsePossuiErros(ResponseResult resposta)
         {
-            if (resposta != null && resposta.Errors.Mensagens.Any())
+            if (resposta == null || resposta.Errors == null)
+                return false;
+
+            if (resposta.Errors.Mensagens.Any())
             {
                 foreach (var mensagem in resposta.Errors.Mensagens)
                 {
@@ -19,6 +22,16 @@ namespace NStore.WebApp.MVC.Controllers
             }
 
             return false;
+        }
+
+        protected void AdicionarErroValidacao(string mensagem)
+        {
+            ModelState.AddModelError(string.Empty, mensagem);
+        }
+
+        protected bool OperacaoValida()
+        {
+            return ModelState.ErrorCount == 0;
         }
     }
 }

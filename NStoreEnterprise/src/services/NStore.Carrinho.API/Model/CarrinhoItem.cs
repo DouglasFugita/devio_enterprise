@@ -2,14 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace NStore.Carrinho.API.Model
 {
     public class CarrinhoItem
     {
-        internal const int MAX_QUANTIDADE_ITEM = 5;
-
         public CarrinhoItem()
         {
             Id = Guid.NewGuid();
@@ -23,14 +22,16 @@ namespace NStore.Carrinho.API.Model
         public string Imagem { get; set; }
 
         public Guid CarrinhoId { get; set; }
+
+        [JsonIgnore]
         public CarrinhoCliente CarrinhoCliente { get; set; }
 
-        internal void AssociarCarriho(Guid carrinhoId)
+        internal void AssociarCarrinho(Guid carrinhoId)
         {
             CarrinhoId = carrinhoId;
         }
 
-        internal decimal CalcularValorTotalItem()
+        internal decimal CalcularValor()
         {
             return Quantidade * Valor;
         }
@@ -40,34 +41,39 @@ namespace NStore.Carrinho.API.Model
             Quantidade += unidades;
         }
 
-        internal bool EhValido()
+        internal void AtualizarUnidades(int unidades)
         {
-            return new ItemPedidoValidation().Validate(this).IsValid;
+            Quantidade = unidades;
         }
 
-        public class ItemPedidoValidation : AbstractValidator<CarrinhoItem>
+        internal bool EhValido()
         {
-            public ItemPedidoValidation()
+            return new ItemCarrinhoValidation().Validate(this).IsValid;
+        }
+
+        public class ItemCarrinhoValidation : AbstractValidator<CarrinhoItem>
+        {
+            public ItemCarrinhoValidation()
             {
                 RuleFor(c => c.ProdutoId)
                     .NotEqual(Guid.Empty)
-                    .WithMessage("Id do produto invalido");
+                    .WithMessage("Id do produto inválido");
 
                 RuleFor(c => c.Nome)
                     .NotEmpty()
-                    .WithMessage("O nome do produto nao foi informado");
+                    .WithMessage("O nome do produto não foi informado");
 
                 RuleFor(c => c.Quantidade)
                     .GreaterThan(0)
-                    .WithMessage("A quantidade minima de um item eh 1");
+                    .WithMessage(item => $"A quantidade miníma para o {item.Nome} é 1");
 
                 RuleFor(c => c.Quantidade)
-                    .LessThan(MAX_QUANTIDADE_ITEM)
-                    .WithMessage($"A quantidade maxima de um item eh {MAX_QUANTIDADE_ITEM}");
+                    .LessThanOrEqualTo(CarrinhoCliente.MAX_QUANTIDADE_ITEM)
+                    .WithMessage(item => $"A quantidade máxima do {item.Nome} é {CarrinhoCliente.MAX_QUANTIDADE_ITEM}");
 
                 RuleFor(c => c.Valor)
                     .GreaterThan(0)
-                    .WithMessage("O valor do item precisa ser maior que 0");
+                    .WithMessage(item => $"O valor do {item.Nome} precisa ser maior que 0");
             }
         }
     }

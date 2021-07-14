@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NStore.Carrinho.API.Data;
+using NStore.WebAPI.Core.Identidade;
 
 namespace NStore.Carrinho.API.Configuration
 {
@@ -42,6 +43,8 @@ namespace NStore.Carrinho.API.Configuration
             app.UseRouting();
 
             app.UseCors("Total");
+
+            app.UseAuthConfig();
 
             app.UseEndpoints(endpoints =>
             {
