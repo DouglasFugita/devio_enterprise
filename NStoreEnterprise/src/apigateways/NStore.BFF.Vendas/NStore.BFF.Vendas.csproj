@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\buildingblocks\NStore.Core\NStore.Core.csproj" />
+    <ProjectReference Include="..\..\buildingblocks\NStore.MessageBus\NStore.MessageBus.csproj" />
+    <ProjectReference Include="..\..\buildingblocks\NStore.WebAPI.Core\NStore.WebAPI.Core.csproj" />
+  </ItemGroup>
+
+</Project>
