@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NStore.WebAPI.Core.Communication;
 using NStore.WebApp.MVC.Models;
 using System.Linq;
 

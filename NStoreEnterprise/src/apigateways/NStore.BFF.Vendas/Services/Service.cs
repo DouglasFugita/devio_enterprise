@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NStore.WebAPI.Core.Communication;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -34,6 +35,11 @@ namespace NStore.BFF.Vendas.Services
 
             response.EnsureSuccessStatusCode();
             return true;
+        }
+
+        protected ResponseResult RetornoOk()
+        {
+            return new ResponseResult();
         }
     }
 }

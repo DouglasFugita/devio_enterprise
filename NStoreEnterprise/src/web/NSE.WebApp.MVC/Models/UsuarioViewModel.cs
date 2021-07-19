@@ -1,4 +1,5 @@
-﻿using NStore.WebApp.MVC.Extensions;
+﻿using NStore.WebAPI.Core.Communication;
+using NStore.WebApp.MVC.Extensions;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

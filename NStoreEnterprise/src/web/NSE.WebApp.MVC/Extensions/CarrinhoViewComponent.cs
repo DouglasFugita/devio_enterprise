@@ -10,16 +10,16 @@ namespace NStore.WebApp.MVC.Extensions
 {
     public class CarrinhoViewComponent : ViewComponent
     {
-        private readonly ICarrinhoService _carrinhoService;
+        private readonly IVendasBFFService _vendasBFFService;
 
-        public CarrinhoViewComponent(ICarrinhoService carrinhoService)
+        public CarrinhoViewComponent(IVendasBFFService vendasBFFService)
         {
-            _carrinhoService = carrinhoService;
+            _vendasBFFService = vendasBFFService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await _carrinhoService.ObterCarrinho() ?? new CarrinhoViewModel());
+            return View(await _vendasBFFService.ObterQuantidadeCarrinho());
         }
     }
 }

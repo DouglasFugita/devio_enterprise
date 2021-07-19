@@ -1,4 +1,5 @@
-﻿using NStore.WebApp.MVC.Extensions;
+﻿using NStore.WebAPI.Core.Communication;
+using NStore.WebApp.MVC.Extensions;
 using NStore.WebApp.MVC.Models;
 using System.Net.Http;
 using System.Text;
