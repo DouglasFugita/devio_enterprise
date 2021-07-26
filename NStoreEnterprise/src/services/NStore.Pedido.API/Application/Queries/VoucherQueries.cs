@@ -23,6 +23,8 @@ namespace NStore.Pedidos.API.Application.Queries
 
             if (voucher == null) return null;
 
+            if (!voucher.EstaValidoParaUtilizazao()) return null;
+
             return new VoucherDTO
             {
                 Codigo = voucher.Codigo,

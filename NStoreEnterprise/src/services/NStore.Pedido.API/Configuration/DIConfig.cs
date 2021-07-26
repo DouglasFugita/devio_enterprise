@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using NStore.Core.Mediator;
+using NStore.Pedidos.API.Application.Queries;
+using NStore.Pedidos.Domain.Vouchers;
 using NStore.Pedidos.Infra.Data;
+using NStore.Pedidos.Infra.Data.Repository;
 using NStore.WebAPI.Core.Usuario;
 
 namespace NStore.Pedidos.API.Configuration
@@ -22,12 +25,12 @@ namespace NStore.Pedidos.API.Configuration
 
             // Application
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            //services.AddScoped<IVoucherQueries, VoucherQueries>();
+            services.AddScoped<IVoucherQueries, VoucherQueries>();
             //services.AddScoped<IPedidoQueries, PedidoQueries>();
 
             // Data
             //services.AddScoped<IPedidoRepository, PedidoRepository>();
-            //services.AddScoped<IVoucherRepository, VoucherRepository>();
+            services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<PedidosContext>();
         }
     }

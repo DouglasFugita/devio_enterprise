@@ -15,7 +15,7 @@ namespace NStore.Pedidos.Infra.Data
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public PedidosContext(DbContextOptions<PedidosContext> options)
+        public PedidosContext(DbContextOptions<PedidosContext> options, IMediatorHandler mediatorHandler)
             : base(options)
         {
             _mediatorHandler = mediatorHandler;

@@ -1,4 +1,5 @@
 ﻿using NStore.Core.DomainObjects;
+using NStore.Pedidos.Domain.Vouchers.Specs;
 using System;
 
 namespace NStore.Pedidos.Domain.Vouchers
@@ -15,6 +16,24 @@ namespace NStore.Pedidos.Domain.Vouchers
         public DateTime DataValidade { get; private set; }
         public bool Ativo { get; private set; }
         public bool Utilizado { get; private set; }
+
+        public bool EstaValidoParaUtilizazao()
+        {
+            var spec = new VoucherAtivoSpecification()
+                .And(new VoucherValidadeSpecification())
+                .And(new VoucherQuantidadeSpecification());
+
+            return spec.IsSatisfiedBy(this);
+        }
+
+        public void MarcarComoUtilizado()
+        {
+            Ativo = false;
+            Utilizado = true;
+            Quantidade = 0;
+        }
     }
+
+
 
 }
