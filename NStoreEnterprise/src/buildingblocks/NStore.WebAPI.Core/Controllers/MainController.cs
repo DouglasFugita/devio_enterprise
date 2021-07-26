@@ -2,11 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NStore.WebAPI.Core.Communication;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NStore.WebAPI.Core.Controllers
 {
@@ -51,7 +48,7 @@ namespace NStore.WebAPI.Core.Controllers
         {
             if (resposta == null || !resposta.Errors.Mensagens.Any()) return false;
 
-            foreach(var mensagem in resposta.Errors.Mensagens)
+            foreach (var mensagem in resposta.Errors.Mensagens)
             {
                 AdicionarErroProcessamento(mensagem);
             }

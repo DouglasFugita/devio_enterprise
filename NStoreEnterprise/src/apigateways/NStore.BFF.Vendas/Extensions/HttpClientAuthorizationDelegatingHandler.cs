@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using NStore.WebAPI.Core.Usuario;
-using System;
+﻿using NStore.WebAPI.Core.Usuario;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -10,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NStore.BFF.Vendas.Extensions
 {
-    public class HttpClientAuthorizationDelegatingHandler: DelegatingHandler
+    public class HttpClientAuthorizationDelegatingHandler : DelegatingHandler
     {
         private readonly IAspNetUser _aspNetUser;
 
@@ -30,7 +27,7 @@ namespace NStore.BFF.Vendas.Extensions
 
             var token = _aspNetUser.ObterUserToken();
 
-            if(token != null)
+            if (token != null)
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }

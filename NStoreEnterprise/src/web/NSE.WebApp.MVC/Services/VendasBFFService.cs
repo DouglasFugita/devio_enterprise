@@ -3,8 +3,6 @@ using NStore.WebAPI.Core.Communication;
 using NStore.WebApp.MVC.Extensions;
 using NStore.WebApp.MVC.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -19,7 +17,7 @@ namespace NStore.WebApp.MVC.Services
         Task<ResponseResult> RemoverItemCarrinho(Guid produtoId);
     }
 
-    public class VendasBFFService: Service, IVendasBFFService
+    public class VendasBFFService : Service, IVendasBFFService
     {
         private readonly HttpClient _httpClient;
 
@@ -64,7 +62,7 @@ namespace NStore.WebApp.MVC.Services
         public async Task<ResponseResult> RemoverItemCarrinho(Guid produtoId)
         {
             var response = await _httpClient.DeleteAsync($"/vendas/carrinho/items/{produtoId}");
-            if(!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
+            if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
             return RetornoOk();
         }
     }

@@ -1,14 +1,13 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using FluentValidation.Results;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using NStore.Clientes.API.Application.Commands;
+using NStore.Core.Mediator;
 using NStore.Core.Messages.Integration;
+using NStore.MessageBus;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System;
-using Microsoft.Extensions.DependencyInjection;
-using NStore.Core.Mediator;
-using FluentValidation.Results;
-using NStore.MessageBus;
-using NStore.Core.DomainObjects;
 
 namespace NStore.Clientes.API.Services
 {

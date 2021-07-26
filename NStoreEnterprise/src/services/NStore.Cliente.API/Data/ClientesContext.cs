@@ -5,8 +5,6 @@ using NStore.Core.Data;
 using NStore.Core.DomainObjects;
 using NStore.Core.Mediator;
 using NStore.Core.Messages;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 

@@ -6,10 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NStore.Clientes.API.Data;
 using NStore.WebAPI.Core.Identidade;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Configuration
 {

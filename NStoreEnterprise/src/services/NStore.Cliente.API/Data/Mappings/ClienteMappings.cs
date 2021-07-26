@@ -2,14 +2,10 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NStore.Clientes.API.Models;
 using NStore.Core.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Data.Mappings
 {
-    public class ClienteMappings: IEntityTypeConfiguration<Cliente>
+    public class ClienteMappings : IEntityTypeConfiguration<Cliente>
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {

@@ -72,7 +72,7 @@ namespace NStore.Core.DomainObjects
             return $"{GetType().Name} [Id ={Id}]";
         }
         #endregion
-        
+
 
     }
 }

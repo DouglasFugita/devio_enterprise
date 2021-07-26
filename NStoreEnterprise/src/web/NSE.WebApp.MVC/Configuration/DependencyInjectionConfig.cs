@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NStore.WebAPI.Core.Usuario;
-using NStore.WebApp.MVC.Extensions;
 using NStore.WebApp.MVC.Services;
 using NStore.WebApp.MVC.Services.Handlers;
 using Polly;

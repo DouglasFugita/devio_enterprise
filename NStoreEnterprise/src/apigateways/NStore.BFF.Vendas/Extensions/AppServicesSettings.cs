@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NStore.BFF.Vendas.Extensions
+﻿namespace NStore.BFF.Vendas.Extensions
 {
     public class AppServicesSettings
     {

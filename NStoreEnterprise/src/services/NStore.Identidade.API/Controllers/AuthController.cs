@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using NStore.Core.Messages.Integration;
-using NStore.Identidade.API.Extensions;
 using NStore.Identidade.API.Models;
 using NStore.MessageBus;
 using NStore.WebAPI.Core.Controllers;

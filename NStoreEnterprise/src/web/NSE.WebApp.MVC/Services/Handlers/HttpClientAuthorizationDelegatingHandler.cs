@@ -1,8 +1,5 @@
 ﻿using NStore.WebAPI.Core.Usuario;
-using NStore.WebApp.MVC.Extensions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -25,11 +22,11 @@ namespace NStore.WebApp.MVC.Services.Handlers
 
             if (!string.IsNullOrEmpty(authorizationHeader))
             {
-                request.Headers.Add("Authorization", new List<string>(){ authorizationHeader});
+                request.Headers.Add("Authorization", new List<string>() { authorizationHeader });
             }
 
             var token = _user.ObterUserToken();
-            if(token != null)
+            if (token != null)
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }

@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NStore.Clientes.API.Models;
 using NStore.Core.Data;
-using NStore.Core.Utils;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Data.Repository

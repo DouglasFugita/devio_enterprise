@@ -6,7 +6,6 @@ using NStore.Carrinho.API.Model;
 using NStore.WebAPI.Core.Controllers;
 using NStore.WebAPI.Core.Usuario;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 

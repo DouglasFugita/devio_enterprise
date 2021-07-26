@@ -1,16 +1,13 @@
 ﻿using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using NStore.Carrinho.API.Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.Carrinho.API.Data
 {
-    public class CarrinhoContext:DbContext
+    public class CarrinhoContext : DbContext
     {
-        public CarrinhoContext(DbContextOptions<CarrinhoContext> options):base(options)
+        public CarrinhoContext(DbContextOptions<CarrinhoContext> options) : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             ChangeTracker.AutoDetectChangesEnabled = false;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace NStore.Core.DomainObjects
 {
@@ -16,7 +11,7 @@ namespace NStore.Core.DomainObjects
         // EF Relation
         protected Email() { }
 
-        public Email (string endereco)
+        public Email(string endereco)
         {
             if (!Validar(endereco)) throw new DomainException("E-mail invalido");
             Endereco = endereco;

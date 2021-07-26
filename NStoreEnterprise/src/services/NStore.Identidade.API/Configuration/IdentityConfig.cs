@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using NStore.Identidade.API.Data;
 using NStore.Identidade.API.Extensions;
 using NStore.WebAPI.Core.Identidade;
-using System.Text;
 
 namespace NStore.Identidade.API.Configuration
 {

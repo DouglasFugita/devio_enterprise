@@ -2,10 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using NStore.Carrinho.API.Data;
 using NStore.WebAPI.Core.Usuario;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.Carrinho.API.Configuration
 {

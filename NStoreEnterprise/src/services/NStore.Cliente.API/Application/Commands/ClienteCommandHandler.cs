@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Application.Commands
 {
-    public class ClienteCommandHandler :CommandHandler, IRequestHandler<RegistrarClienteCommand, ValidationResult>
+    public class ClienteCommandHandler : CommandHandler, IRequestHandler<RegistrarClienteCommand, ValidationResult>
     {
         private readonly IClienteRepository _clienteRepository;
 
@@ -21,7 +21,7 @@ namespace NStore.Clientes.API.Application.Commands
         {
             if (!message.EhValido())
                 return ValidationResult;
-            
+
             var cliente = new Cliente(message.Id, message.Nome, message.Email, message.Cpf);
             var clienteExistente = await _clienteRepository.ObterPorCpf(cliente.Cpf.Numero);
             if (clienteExistente != null)
@@ -34,7 +34,7 @@ namespace NStore.Clientes.API.Application.Commands
 
             cliente.AdicionarEvento(new ClienteRegistradoEvent(message.Id, message.Nome, message.Email, message.Cpf));
 
-            
+
             return await PersistirDados(_clienteRepository.UnitOfWork);
         }
 

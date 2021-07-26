@@ -4,8 +4,8 @@ using NStore.BFF.Vendas.Extensions;
 using NStore.BFF.Vendas.Services;
 using NStore.WebAPI.Core.Extensions;
 using NStore.WebAPI.Core.Usuario;
-using System;
 using Polly;
+using System;
 
 namespace NStore.BFF.Vendas.Configuration
 {

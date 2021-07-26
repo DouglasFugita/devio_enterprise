@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NSE.Identidade.API.Configuration;
 using NStore.Identidade.API.Configuration;
-using NStore.WebAPI.Core.Identidade;
 
 namespace NStore.Identidade.API
 {

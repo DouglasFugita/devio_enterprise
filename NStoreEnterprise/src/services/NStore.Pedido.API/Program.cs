@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace NStore.Pedido.API
+namespace NStore.Pedidos.API
 {
     public class Program
     {

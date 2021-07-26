@@ -3,14 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using NStore.WebApp.MVC.Models;
 using NStore.WebApp.MVC.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NStore.WebApp.MVC.Controllers
 {
     [Authorize]
-    public class CarrinhoController: MainController
+    public class CarrinhoController : MainController
     {
         private readonly IVendasBFFService _comprasBFFService;
 

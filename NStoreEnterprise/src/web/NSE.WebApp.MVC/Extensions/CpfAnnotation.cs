@@ -3,23 +3,20 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Localization;
 using NStore.Core.DomainObjects;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.WebApp.MVC.Extensions
 {
-    public class CpfAttribute: ValidationAttribute
+    public class CpfAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             return Cpf.Validar(value.ToString()) ? ValidationResult.Success : new ValidationResult("CPF em formato invalido");
         }
 
-        public class CpfAttributeAdapter: AttributeAdapterBase<CpfAttribute>
+        public class CpfAttributeAdapter : AttributeAdapterBase<CpfAttribute>
         {
-            public CpfAttributeAdapter(CpfAttribute attribute, IStringLocalizer stringLocalizer): base(attribute, stringLocalizer) {}
+            public CpfAttributeAdapter(CpfAttribute attribute, IStringLocalizer stringLocalizer) : base(attribute, stringLocalizer) { }
 
             public override void AddValidation(ClientModelValidationContext context)
             {

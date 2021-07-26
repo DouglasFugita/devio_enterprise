@@ -1,9 +1,6 @@
 ﻿using FluentValidation;
 using NStore.Core.Messages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.Clientes.API.Application.Commands
 {
@@ -31,7 +28,7 @@ namespace NStore.Clientes.API.Application.Commands
 
     }
 
-    public class RegistrarClienteValidation: AbstractValidator<RegistrarClienteCommand>
+    public class RegistrarClienteValidation : AbstractValidator<RegistrarClienteCommand>
     {
         public RegistrarClienteValidation()
         {

@@ -92,10 +92,10 @@ namespace NStore.BFF.Vendas.Controllers
 
             if (itemCarinho != null && itemCarinho.Quantidade + quantidade > produto.QuantidadeEstoque)
             {
-                AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque. Voce selecionou {quantidade+ itemCarinho.Quantidade}");
+                AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque. Voce selecionou {quantidade + itemCarinho.Quantidade}");
                 return;
             }
-            
+
             if (quantidade > produto.QuantidadeEstoque) AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque. Voce selecionou {quantidade}");
         }
     }

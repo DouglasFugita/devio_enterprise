@@ -3,8 +3,6 @@ using NStore.BFF.Vendas.Extensions;
 using NStore.BFF.Vendas.Models;
 using NStore.WebAPI.Core.Communication;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -18,7 +16,7 @@ namespace NStore.BFF.Vendas.Services
         Task<ResponseResult> RemoverItemCarrinho(Guid produtoId);
 
     }
-    public class CarrinhoService: Service, ICarrinhoService
+    public class CarrinhoService : Service, ICarrinhoService
     {
         private readonly HttpClient _httpClient;
 

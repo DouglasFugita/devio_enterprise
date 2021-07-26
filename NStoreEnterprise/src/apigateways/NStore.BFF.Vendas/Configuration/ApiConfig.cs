@@ -5,10 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NStore.BFF.Vendas.Extensions;
 using NStore.WebAPI.Core.Identidade;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NStore.BFF.Vendas.Configuration
 {
@@ -22,13 +18,13 @@ namespace NStore.BFF.Vendas.Configuration
 
             services.AddCors(options =>
             {
-            options.AddPolicy("Total",
-                builder =>
-                    builder
-                        .AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                );
+                options.AddPolicy("Total",
+                    builder =>
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                    );
             });
         }
 

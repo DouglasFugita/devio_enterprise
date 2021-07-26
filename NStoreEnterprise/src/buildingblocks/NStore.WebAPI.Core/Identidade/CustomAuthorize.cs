@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NStore.WebAPI.Core.Identidade
 {
@@ -21,9 +17,9 @@ namespace NStore.WebAPI.Core.Identidade
 
     public class ClaimsAuthorizeAttribute : TypeFilterAttribute
     {
-        public ClaimsAuthorizeAttribute(string claimName, string claimValue): base(typeof(RequisitoClaimFilter))
+        public ClaimsAuthorizeAttribute(string claimName, string claimValue) : base(typeof(RequisitoClaimFilter))
         {
-            Arguments = new object[] { new Claim(claimName, claimValue)};
+            Arguments = new object[] { new Claim(claimName, claimValue) };
         }
     }
 
