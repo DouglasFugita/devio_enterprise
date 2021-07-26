@@ -84,6 +84,21 @@ namespace NStore.Carrinho.API.Controllers
             return CustomResponse();
         }
 
+        [HttpPost]
+        [Route("carrinho/aplicar-voucher")]
+        public async Task<IActionResult> AplicarVoucher(Voucher voucher)
+        {
+            var carrinho = await ObterCarrinhoCliente();
+            carrinho.AplicarVoucher(voucher);
+
+            _context.CarrinhoCliente.Update(carrinho);
+            var result = await _context.SaveChangesAsync();
+            if (result <= 0) AdicionarErroProcessamento("Nao foi possivel persistir os dados no banco");
+
+            return CustomResponse();
+
+        }
+
         private async Task<CarrinhoCliente> ObterCarrinhoCliente()
         {
             return await _context.CarrinhoCliente
