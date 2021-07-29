@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pedidos\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\buildingblocks\NStore.Core\NStore.Core.csproj" />
   </ItemGroup>
 

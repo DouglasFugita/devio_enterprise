@@ -4,6 +4,7 @@ using NStore.Core.Data;
 using NStore.Core.DomainObjects;
 using NStore.Core.Mediator;
 using NStore.Core.Messages;
+using NStore.Pedidos.Domain.Pedidos;
 using NStore.Pedidos.Domain.Vouchers;
 using System;
 using System.Linq;
@@ -15,13 +16,14 @@ namespace NStore.Pedidos.Infra.Data
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public PedidosContext(DbContextOptions<PedidosContext> options, IMediatorHandler mediatorHandler)
-            : base(options)
+        public PedidosContext(DbContextOptions<PedidosContext> options, IMediatorHandler mediatorHandler) : base(options)
         {
             _mediatorHandler = mediatorHandler;
         }
 
         public DbSet<Voucher> Vouchers { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoItem> PedidoItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -63,6 +65,7 @@ namespace NStore.Pedidos.Infra.Data
 
             return sucesso;
         }
+
     }
 
     public static class MediatorExtension

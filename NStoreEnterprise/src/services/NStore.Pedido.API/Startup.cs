@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -32,10 +33,12 @@ namespace NStore.Pedidos.API
         {
             services.AddApiConfig(Configuration);
             services.AddJwtConfig(Configuration);
-
+            services.AddMediatR(typeof(Startup));
             services.AddSwaggerConfig();
 
             services.RegisterServices();
+
+            services.AddMessageBusConfig(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

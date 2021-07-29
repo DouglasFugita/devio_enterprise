@@ -6,6 +6,11 @@ using NStore.Pedidos.Domain.Vouchers;
 using NStore.Pedidos.Infra.Data;
 using NStore.Pedidos.Infra.Data.Repository;
 using NStore.WebAPI.Core.Usuario;
+using MediatR;
+using NStore.Pedidos.API.Application.Commands;
+using FluentValidation.Results;
+using NStore.Pedidos.API.Application.Events;
+using NStore.Pedidos.Domain.Pedidos;
 
 namespace NStore.Pedidos.API.Configuration
 {
@@ -18,18 +23,18 @@ namespace NStore.Pedidos.API.Configuration
             services.AddScoped<IAspNetUser, AspNetUser>();
 
             // Commands
-            //services.AddScoped<IRequestHandler<AdicionarPedidoCommand, ValidationResult>, PedidoCommandHandler>();
+            services.AddScoped<IRequestHandler<AdicionarPedidoCommand, ValidationResult>, PedidoCommandHandler>();
 
             // Events
-            //services.AddScoped<INotificationHandler<PedidoRealizadoEvent>, PedidoEventHandler>();
+            services.AddScoped<INotificationHandler<PedidoRealizadoEvent>, PedidoEventHandler>();
 
             // Application
-            services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IVoucherQueries, VoucherQueries>();
-            //services.AddScoped<IPedidoQueries, PedidoQueries>();
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
+            services.AddScoped<IPedidoQueries, PedidoQueries>();
 
             // Data
-            //services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
             services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<PedidosContext>();
         }

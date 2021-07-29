@@ -12,7 +12,7 @@ namespace NStore.Pedidos.Domain.Vouchers
         public int Quantidade { get; private set; }
         public TipoDescontoVoucher TipoDesconto { get; private set; }
         public DateTime DateCriacao { get; private set; }
-        public DateTime DataUtilizacao { get; private set; }
+        public DateTime? DataUtilizacao { get; private set; }
         public DateTime DataValidade { get; private set; }
         public bool Ativo { get; private set; }
         public bool Utilizado { get; private set; }
@@ -31,6 +31,15 @@ namespace NStore.Pedidos.Domain.Vouchers
             Ativo = false;
             Utilizado = true;
             Quantidade = 0;
+            DataUtilizacao = DateTime.Now;
+        }
+
+        public void DebitarQuantidade()
+        {
+            Quantidade -= 1;
+            if (Quantidade >= 1) return;
+
+            MarcarComoUtilizado();
         }
     }
 

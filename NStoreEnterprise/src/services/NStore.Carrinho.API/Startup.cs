@@ -36,6 +36,8 @@ namespace NStore.Carrinho.API
             services.AddSwaggerConfig();
             services.RegisterServices();
 
+            services.AddMessageBusConfig(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
