@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NStore.Clientes.API.Models;
 using NStore.Core.Data;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -35,6 +36,16 @@ namespace NStore.Clientes.API.Data.Repository
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        public void AdicionarEndereco(Endereco endereco)
+        {
+            _context.Enderecos.Add(endereco);
+        }
+
+        public async Task<Endereco> ObterEnderecoPorId(Guid id)
+        {
+            return await _context.Enderecos.FirstOrDefaultAsync(e => e.ClienteId == id);
         }
     }
 }
