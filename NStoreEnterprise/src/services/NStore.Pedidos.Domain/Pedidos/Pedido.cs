@@ -64,7 +64,7 @@ namespace NStore.Pedidos.Domain.Pedidos
             CalcularValorTotalDesconto();
         }
 
-        private void CalcularValorTotalDesconto()
+        public void CalcularValorTotalDesconto()
         {
             if (!VoucherUtilizado) return;
 
@@ -74,15 +74,20 @@ namespace NStore.Pedidos.Domain.Pedidos
             if (Voucher.TipoDesconto == TipoDescontoVoucher.Percentual)
             {
                 if (Voucher.Percentual.HasValue)
+                {
                     desconto = (valor * Voucher.Percentual.Value) / 100;
+                    valor -= desconto;
+                }
             }
             else
             {
                 if (Voucher.ValorDesconto.HasValue)
+                {
                     desconto = Voucher.ValorDesconto.Value;
+                    valor -= desconto;
+                }
             }
 
-            valor -= desconto;
             ValorTotal = valor < 0 ? 0 : valor;
             Desconto = desconto;
         }
