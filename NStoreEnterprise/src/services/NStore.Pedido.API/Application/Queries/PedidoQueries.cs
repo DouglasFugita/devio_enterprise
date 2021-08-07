@@ -67,6 +67,7 @@ namespace NStore.Pedidos.API.Application.Queries
                     if (!lookup.TryGetValue(p.Id, out var pedidoDTO))
                         lookup.Add(p.Id, pedidoDTO = p);
 
+
                     pedidoDTO.PedidoItems ??= new List<PedidoItemDTO>();
                     pedidoDTO.PedidoItems.Add(pi);
 

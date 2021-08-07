@@ -49,6 +49,7 @@ namespace NStore.Pedidos.API.Services
                 await bus.PublishAsync(pedidoAutorizado);
 
                 _logger.LogInformation($"Pedido ID: { pedido.Id} foi encaminhado para baixa no estoque");
+
             }
         }
 
