@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace NStore.Pagamento.API
+namespace NStore.Pagamentos.API
 {
     public class Program
     {

@@ -58,3 +58,6 @@ Validacao
 - [ ] Utilizar AMQP Client Library ao inves de EasyNetQ
 - [ ] Implementar REDIS para API Carrinho
 - [ ] Implementar Ocelot como API Gateway
+- [ ] Integrar com API de cartao de credito externa (developer.authorize.net)
+- [ ] Utilizar Hangfire para tarefas em background (www.hangfire.io)
+- [ ] 
