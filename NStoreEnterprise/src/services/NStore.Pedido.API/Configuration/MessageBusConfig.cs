@@ -15,8 +15,8 @@ namespace NStore.Pedidos.API.Configuration
         public static void AddMessageBusConfig(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddMessageBus(configuration.GetMessageQueueConnection("MessageBus"))
-                .AddHostedService<PedidoOrquestradorIntegrationHandler>();
-
+                .AddHostedService<PedidoOrquestradorIntegrationHandler>()
+                .AddHostedService<PedidoIntegrationHandler>(); 
         }
     }
 }
