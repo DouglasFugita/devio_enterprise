@@ -1,63 +1,15 @@
 # Enterprise Core
 
-Projeto baseado no conteudo abordado no curso ASP.NET Core Enterprise Applications, que pode ser encontrado em: https://desenvolvedor.io/curso-online-asp-net-core-enterprise-applications
+Projeto baseado no conteudo abordado no curso Microservices Architecture and Implementation on .NET 5, que pode ser encontrado em: https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/
 
-## SQLServer - Docker
-Foi utilizado o docker-compose para subir uma instancia SQL Server
-Arquivos salvos em: \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes
+O projeto foi desde o inicio implementado em .net 6.
 
-## RabbitMQ - Docker
-A utilizacao do docker-compose tambem habilita o RabbitMQ em suas portas standard:
-- 5672 (AMQP listener)
-- 15672 (Management UI)
+Este projeto utiliza como pano de fundo um e-commerce para implementar diversos microservicos percorrendo toda a experiencia de compra de uma loja virtual.
 
-## Assuntos abordados neste projeto
-Conceitos
-- DDD
-- CQRS
+## Catalog
+Servico responsavel por lidar com as informacoes de produto.
+- BD: MongoDB
 
-Dados
-- EntityFrameworkCore
-- Dapper
-
-Caching
-- Redis
-
-API
-- Swagger
-- Refit
-- Polly
-
-Servico de Identidade
-- Asp.net Identity
-- JWT
-
-CQRS
-- Mediatr
-
-Mensageria
-- RabbitMQ
-- EasyNetQ
-
-Validacao
-- FluentValidation
-
-
-
-## Questoes levantas
-- Utilizacao de um unico BD para todos os servicos
-- Modelo em camadas divididos em pastas logicas por serem APIs simples
-- Acoplamento por conta do DomainObjects no Core
-- Secret do Identity exposto no appsettings
-- Utilizacao de IServiceProvider.CreateScope para utilizacao de classe injetada por dependencia Scoped em BackgroundService Singleton (Service Locator)
-
-## Melhorias futuras
-- [ ] Implementar outros recursos do Identity (2FA, Recuperacao de senha)
-- [ ] API pra controle de estoque
-- [ ] Controle de identidade com KeyCloak
-- [ ] Utilizar AMQP Client Library ao inves de EasyNetQ
-- [ ] Implementar REDIS para API Carrinho
-- [ ] Implementar Ocelot como API Gateway
-- [ ] Integrar com API de cartao de credito externa (developer.authorize.net)
-- [ ] Utilizar Hangfire para tarefas em background (www.hangfire.io)
-- [ ] 
+## Basket
+Armazenamento dos dados de carrinho de compra em Cache.
+- Cache: Redis
